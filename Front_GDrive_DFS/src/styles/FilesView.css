@@ -1,0 +1,172 @@
+.fileView {
+  width: 80%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.fileView__carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.fileView__carousel button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.fileView__row {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.fileView__row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.fileView__row::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.fileView__row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fileView__titles {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: rgb(85, 78, 78);
+}
+
+.fileView__titles--left,
+.fileView__titles--right {
+  display: flex;
+  gap: 2rem;
+}
+
+.fileCard {
+  min-width: 200px;     
+  max-width: 250px;
+  flex-shrink: 0;         
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.fileItem__caption {
+  max-width: 150px;      
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.foldersRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.folderCard {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  background-color: #f1f3f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.folderIcon {
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.folderView__carousel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+
+.folderView__row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 5px 0;
+  flex-wrap: nowrap; 
+}
+
+.folderCard {
+  min-width: 120px;
+  height: 140px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: box-shadow 0.2s;
+}
+
+.folderCard:hover {
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+}
+
+.folderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.folderMenuButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+.folderMenu {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 10;
+}
+.folderMenu button {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+.folderMenu button:hover {
+  background: #eee;
+}

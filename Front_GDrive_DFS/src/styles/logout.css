@@ -1,0 +1,26 @@
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.user-menu-content {
+  padding: 16px;
+  min-width: 250px;
+}
+
+.user-email {
+  font-size: 14px;
+  text-align: center;
+}
+
+.user-name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+

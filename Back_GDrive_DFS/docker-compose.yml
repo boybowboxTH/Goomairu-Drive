@@ -1,0 +1,74 @@
+services:
+  s1:
+    container_name: s1
+    build: .
+    environment:
+      - NODE_ID=s1
+      - STORAGE_ROOT=/app/storage
+      - PORT=8080
+      - SELF_URL=http://s1:8080
+      - PEERS=http://s2:8080,http://s3:8080
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/credentials.json
+    volumes:
+      - ./storage/s1:/app/storage
+      - ./SecretKey/credentials.json:/app/credentials/credentials.json:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - p2p_network
+    ports:
+      - "18080:8080"
+
+  s2:
+    container_name: s2
+    build: .
+    environment:
+      - NODE_ID=s2
+      - STORAGE_ROOT=/app/storage
+      - PORT=8080
+      - SELF_URL=http://s2:8080
+      - PEERS=http://s1:8080,http://s3:8080
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/credentials.json
+    volumes:
+      - ./storage/s2:/app/storage
+      - ./SecretKey/credentials.json:/app/credentials/credentials.json:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - p2p_network
+    ports:
+      - "28080:8080"
+
+  s3:
+    container_name: s3
+    build: .
+    environment:
+      - NODE_ID=s3
+      - STORAGE_ROOT=/app/storage
+      - PORT=8080
+      - SELF_URL=http://s3:8080
+      - PEERS=http://s1:8080,http://s2:8080
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials/credentials.json
+    volumes:
+      - ./storage/s3:/app/storage
+      - ./SecretKey/credentials.json:/app/credentials/credentials.json:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - p2p_network
+    ports:
+      - "38080:8080"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:rw
+    depends_on:
+      - s1
+      - s2
+      - s3
+    networks:
+      - p2p_network
+
+networks:
+  p2p_network:
+    driver: bridge

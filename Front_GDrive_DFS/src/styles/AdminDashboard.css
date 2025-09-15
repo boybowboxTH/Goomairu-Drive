@@ -1,0 +1,163 @@
+
+.admin-dashboard {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  width: 90%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.text-green {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.text-red {
+  color: #f44336;
+  font-weight: bold;
+}
+
+.chart-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.chart-circle {
+  width: 220px;
+  height: 20px;
+  background: #eee;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+}
+
+.healthy-bar {
+  background: #4caf50;
+  height: 100%;
+}
+
+.unhealthy-bar {
+  background: #f44336;
+  height: 100%;
+}
+
+.chart-label {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.status-healthy {
+  color: #fff;
+  background-color: #4caf50;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status-unhealthy {
+  color: #fff;
+  background-color: #f44336;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+button {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+}
+
+.logs-container {
+  position: absolute;
+  width: 60%;
+  bottom: 50px;
+  max-height: 120px;
+  background-color: rgba(248, 249, 250, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-size: 12px;
+}
+
+.logs-container h2 {
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+.logs-container pre {
+  margin: 0;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

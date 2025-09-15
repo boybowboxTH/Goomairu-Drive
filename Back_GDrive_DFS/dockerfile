@@ -1,0 +1,23 @@
+FROM golang:1.25-alpine
+
+WORKDIR /app
+
+RUN apk add --no-cache docker
+
+COPY go.mod ./
+COPY go.sum ./
+
+# dependencies
+RUN go mod download
+
+COPY . .
+
+# build 
+RUN go build -o /main
+RUN mkdir -p /app/storage
+
+EXPOSE 3000
+EXPOSE 7000
+EXPOSE 5000
+
+CMD ["/main"]

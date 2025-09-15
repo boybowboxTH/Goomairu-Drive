@@ -1,0 +1,4 @@
+bin
+
+# in SecretKey folder should have Firebase Admin SDK for check userid it private can't show
+/SecretKey/
