@@ -32,31 +32,31 @@ It allows uploading, downloading, sharing, and managing files across multiple no
 
 ## Screenshots / Dashboard Preview
 
-![Login Preview](docs/login.png)  
+![Login Preview](doc/login.png)  
 *Login page : Login with Oauth google.*
 
-![Drive Preview](docs/drive.png)  
+![Drive Preview](doc/drive.png)  
 *A personal drive page that displays a list of files and folders.*
 
-![Share Preview](docs/share.png)  
+![Share Preview](doc/share.png)  
 *Page showing items shared with me by other users, with the option to reshare*
 
-![Recent Preview](docs/recent.png)  
+![Recent Preview](doc/recent.png)  
 *Recent items page showing the latest files first, including shared files.*
 
-![Delete Preview](docs/delete.png)  
+![Delete Preview](doc/delete.png)  
 *Trash page showing deleted items with options to restore or permanently delete.*
 
-![Admin Preview](docs/admin.png)  
+![Admin Preview](doc/admin.png)  
 *Admin dashboard page displaying node statuses, logs, and allowing nodes to be turned on or off.*
 
-![Docker Preview](docs/addfile_docker.png)  
+![Docker Preview](doc/addfile_docker.png)  
 *Page displaying Docker nodes and logs for newly added files.*
 
-![Firebase Preview](docs/firebase.png)  
+![Firebase Preview](doc/firebase.png)  
 *Page displaying the Firebase database.*
 
-![Docker Preview](docs/docker.png)  
+![Docker Preview](doc/docker.png)  
 *Page displaying Docker nodes and logs when file limits are exceeded.*
 
 ---
