@@ -32,11 +32,32 @@ It allows uploading, downloading, sharing, and managing files across multiple no
 
 ## Screenshots / Dashboard Preview
 
-![Dashboard Preview](docs/dashboard_preview.png)  
-*Example of admin dashboard showing node status, health bars, and logs.*
+![Login Preview](docs/login.png)  
+*Login page : Login with Oauth google.*
 
-![File View Preview](docs/file_view_preview.png)  
-*Example of frontend file management interface.*
+![Drive Preview](docs/drive.png)  
+*A personal drive page that displays a list of files and folders.*
+
+![Share Preview](docs/share.png)  
+*Page showing items shared with me by other users, with the option to reshare*
+
+![Recent Preview](docs/recent.png)  
+*Recent items page showing the latest files first, including shared files.*
+
+![Delete Preview](docs/delete.png)  
+*Trash page showing deleted items with options to restore or permanently delete.*
+
+![Admin Preview](docs/admin.png)  
+*Admin dashboard page displaying node statuses, logs, and allowing nodes to be turned on or off.*
+
+![Docker Preview](docs/addfile_docker.png)  
+*Page displaying Docker nodes and logs for newly added files.*
+
+![Firebase Preview](docs/firebase.png)  
+*Page displaying the Firebase database.*
+
+![Docker Preview](docs/docker.png)  
+*Page displaying Docker nodes and logs when file limits are exceeded.*
 
 ---
 
@@ -49,25 +70,31 @@ It allows uploading, downloading, sharing, and managing files across multiple no
 | user_id    |      | folder_id |      |  file_id  |
 | email      |      |   name    |      |  filename |
 | name       |      | shareWith |      | highlight |
-| lastLogin  |      | highlight |      | 
+| lastLogin  |      | highlight |      | filePath  |
 | photoURL   |      |  user_id  |      | folder_id |
-+------------+      | timestamp |         |
-                    |  deleted  |
-                    | deletedAt |
-                    +-----------+      | owner_id  |
-                                       | shared_to |
++------------+      | timestamp |      |   nodeId  |
+                    |  deleted  |      | shareWith |
+                    | deletedAt |      |    size   |
+                    +-----------+      | timestamp |
+                                       |   userId  |
                                        +-----------+
 ```
 Simplified view of Firebase collections and relationships.
 
 ## API Endpoints
-Method	Endpoint	Description
-GET	/api/cluster/health	Get status of all nodes
-POST	/api/node/toggle	Start/Stop a node
-GET	/api/files	List files for current user
-POST	/api/files/upload	Upload a file
-POST	/api/files/share	Share file with another user
-DELETE	/api/files/:id	Delete a file
+Method	  Endpoint	                    Description
+GET	      /api/health	                  Check overall system health
+GET	      /api/files/:filename	        Get file metadata or info by filename
+GET	      /files/raw/:userID/:filename	Download raw file for a specific user
+GET	      /api/files	                  List all files for the current user
+GET	      /api/cluster/health	          Get status of all nodes
+GET	      /api/files	                  List all files for the current user
+POST	    /api/node/toggle	            Start or stop a node
+POST	    /api/files/upload	            Upload a file
+POST	    /api/files/share	            Share a file with another user
+POST	    /api/upload                  	Upload a file
+POST	    /store-local	                Store a file locally
+DELETE	  /api/files/:filename	        Delete a file
 
 ## Installation
 ```text
