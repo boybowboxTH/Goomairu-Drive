@@ -82,6 +82,7 @@ It allows uploading, downloading, sharing, and managing files across multiple no
 Simplified view of Firebase collections and relationships.
 
 ## API Endpoints
+```text
 Method	  Endpoint	                    Description
 GET	      /api/health	                  Check overall system health
 GET	      /api/files/:filename	        Get file metadata or info by filename
@@ -95,7 +96,7 @@ POST	    /api/files/share	            Share a file with another user
 POST	    /api/upload                  	Upload a file
 POST	    /store-local	                Store a file locally
 DELETE	  /api/files/:filename	        Delete a file
-
+```
 ## Installation
 ```text
 Frontend (React)
