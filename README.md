@@ -84,17 +84,17 @@ Simplified view of Firebase collections and relationships.
 ## API Endpoints
 ```text
 Method	  Endpoint	                    Description
-GET	      /api/health	                  Check overall system health
+GET	      /api/health	                Check overall system health
 GET	      /api/files/:filename	        Get file metadata or info by filename
 GET	      /files/raw/:userID/:filename	Download raw file for a specific user
-GET	      /api/files	                  List all files for the current user
-GET	      /api/cluster/health	          Get status of all nodes
-GET	      /api/files	                  List all files for the current user
-POST	    /api/node/toggle	            Start or stop a node
-POST	    /api/files/upload	            Upload a file
-POST	    /api/files/share	            Share a file with another user
-POST	    /api/upload                  	Upload a file
-POST	    /store-local	                Store a file locally
+GET	      /api/files	                List all files for the current user
+GET	      /api/cluster/health	        Get status of all nodes
+GET	      /api/files	                List all files for the current user
+POST	  /api/node/toggle	            Start or stop a node
+POST	  /api/files/upload	            Upload a file
+POST	  /api/files/share	            Share a file with another user
+POST	  /api/upload                  	Upload a file
+POST	  /store-local	                Store a file locally
 DELETE	  /api/files/:filename	        Delete a file
 ```
 ## Installation
